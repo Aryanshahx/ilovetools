@@ -5,6 +5,7 @@ import '../../features/word_counter/word_counter_screen.dart';
 import '../../features/unit_converter/unit_converter_screen.dart';
 import '../../features/json_formatter/json_formatter_screen.dart';
 import '../../features/qr_generator/qr_generator_screen.dart';
+import '../../features/pdf_compressor/pdf_compressor_screen.dart';
 
 final List<ToolMeta> toolRegistry = [
   ToolMeta(
@@ -19,7 +20,7 @@ final List<ToolMeta> toolRegistry = [
     name: 'Compress PDF',
     icon: Icons.compress,
     category: 'PDF',
-    builder: (_) => const PlaceholderToolScreen(toolName: 'Compress PDF'),
+    builder: (_) => const PdfCompressorScreen(),
   ),
   ToolMeta(
     id: 'image_compress',
