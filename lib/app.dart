@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'core/theme/app_theme.dart';
 import 'features/home/home_screen.dart';
 
 class ILoveToolsApp extends StatelessWidget {
@@ -8,10 +9,9 @@ class ILoveToolsApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'iLoveTools',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      themeMode: ThemeMode.system,
       home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );

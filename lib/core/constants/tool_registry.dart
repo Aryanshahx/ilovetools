@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import '../models/tool_meta.dart';
 import '../widgets/placeholder_tool_screen.dart';
+import '../../features/word_counter/word_counter_screen.dart';
+import '../../features/unit_converter/unit_converter_screen.dart';
+import '../../features/json_formatter/json_formatter_screen.dart';
+import '../../features/qr_generator/qr_generator_screen.dart';
 
 final List<ToolMeta> toolRegistry = [
   ToolMeta(
@@ -29,7 +33,7 @@ final List<ToolMeta> toolRegistry = [
     name: 'QR Generator',
     icon: Icons.qr_code,
     category: 'QR',
-    builder: (_) => const PlaceholderToolScreen(toolName: 'QR Generator'),
+    builder: (_) => const QrGeneratorScreen(),
   ),
   ToolMeta(
     id: 'qr_scan',
@@ -43,20 +47,20 @@ final List<ToolMeta> toolRegistry = [
     name: 'JSON Formatter',
     icon: Icons.data_object,
     category: 'Dev',
-    builder: (_) => const PlaceholderToolScreen(toolName: 'JSON Formatter'),
+    builder: (_) => const JsonFormatterScreen(),
   ),
   ToolMeta(
     id: 'unit_converter',
     name: 'Unit Converter',
     icon: Icons.swap_horiz,
     category: 'Utility',
-    builder: (_) => const PlaceholderToolScreen(toolName: 'Unit Converter'),
+    builder: (_) => const UnitConverterScreen(),
   ),
   ToolMeta(
     id: 'word_counter',
     name: 'Word Counter',
     icon: Icons.text_fields,
     category: 'Text',
-    builder: (_) => const PlaceholderToolScreen(toolName: 'Word Counter'),
+    builder: (_) => const WordCounterScreen(),
   ),
 ];
