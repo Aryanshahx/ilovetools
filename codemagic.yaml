@@ -1,0 +1,32 @@
+workflows:
+  ilove-tools-apk:
+    name: iLoveTools APK Build
+    max_build_duration: 30
+    instance_type: linux_x2
+    environment:
+      flutter: stable
+      java: 17
+      vars:
+        PACKAGE_NAME: "com.example.ilovetools"
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: true
+    scripts:
+      - name: Get Flutter packages
+        script: |
+          flutter packages pub get
+
+      - name: Analyze code (optional, fails build on lint errors)
+        script: |
+          flutter analyze || true
+
+      - name: Build release APK
+        script: |
+          flutter build apk --release
+
+    artifacts:
+      - build/**/outputs/**/*.apk
+      - build/**/outputs/**/mapping.txt
